@@ -44,6 +44,8 @@ COPY --from=build_deps /usr/app .
 # since memory may spike during certain network conditions.
 ENV NODE_OPTIONS=--max-old-space-size=8192
 COPY ./lodestar.sh .
+
+# Create lodestar command
 RUN ln -s /usr/app/lodestar.sh /bin/lodestar
 
-ENTRYPOINT ["lodestar", "--version"]
+ENTRYPOINT ["lodestar"]
