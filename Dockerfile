@@ -46,6 +46,6 @@ ENV NODE_OPTIONS=--max-old-space-size=8192
 COPY ./lodestar.sh .
 
 # Create lodestar command
-RUN ln -s /usr/app/lodestar.sh /bin/lodestar
+RUN chmod +x /usr/app/lodestar.sh && ln -s /usr/app/lodestar.sh /bin/lodestar
 
 ENTRYPOINT ["lodestar"]
